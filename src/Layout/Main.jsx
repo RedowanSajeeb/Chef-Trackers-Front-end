@@ -1,10 +1,11 @@
 import React from 'react';
-
+import Navbar from '../pages/Navbar';
+import "../../src/index.css"
 const Main = () => {
     return (
-        <div>
-            <h1>home</h1>
-        </div>
+      <div className="side-container">
+        <Navbar></Navbar>
+      </div>
     );
 };
 
