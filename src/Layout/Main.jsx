@@ -5,6 +5,7 @@ const Main = () => {
     return (
       <div className="side-container">
         <Navbar></Navbar>
+      
       </div>
     );
 };

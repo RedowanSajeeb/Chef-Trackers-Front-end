@@ -19,7 +19,7 @@ export default function Example() {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mb-4 mt-2  flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
         variant="small"
@@ -46,16 +46,6 @@ export default function Example() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        {/* <a href="#" className="flex items-center">
-          Blocks
-        </a> */}
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
         <a href="#" className="flex items-center">
           Login
         </a>
@@ -67,7 +57,7 @@ export default function Example() {
   );
 
   return (
-    <Navbar className="mx-auto rounded mt-5 max-w-screen-xl py-2 px-4  ">
+    <Navbar className="mx-auto text-black rounded mt-5 max-w-screen-xl py-2 px-4  ">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
@@ -85,8 +75,12 @@ export default function Example() {
             </h2>
           </div>
         </Typography>
-        <div className="hidden lg:block">{navList}</div>
-        <Button variant="gradient" size="sm" className="hidden lg:inline-block">
+        <div className="hidden text-slate-500 lg:block">{navList}</div>
+        <Button
+          variant="gradient"
+          size="sm"
+          className="hidden text-black lg:inline-block"
+        >
           <span>Drak Mood</span>
         </Button>
         <div>
