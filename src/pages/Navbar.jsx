@@ -81,7 +81,7 @@ export default function Example() {
           size="sm"
           className="hidden text-black lg:inline-block"
         >
-          <span>Drak Mood</span>
+          <input type="checkbox" className="toggle" checked />
         </Button>
         <div>
           <img
