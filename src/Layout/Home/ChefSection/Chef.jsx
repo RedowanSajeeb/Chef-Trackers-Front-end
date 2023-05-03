@@ -10,7 +10,7 @@ const Chef = () => {
             "https://chef-recipe-hunter-server-side-redowansajeeb.vercel.app/chef"
           );
           const json = await response.json();
-          setData(json.Chef);
+          setData(json);
         } catch (error) {
           console.error(error);
         }

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({chef}) => {
-    const { picture, name, years_of_experience, number_of_recipes, likes } =
+    const { picture, name, years_of_experience, number_of_recipes, likes ,_id } =
       chef;
-    console.log(chef);
+    // console.log(chef);
     return (
       <div className="md:mb-20">
         <div className=" md:mt-20 card w-96 bg-base-100 shadow-xl">
@@ -15,11 +16,13 @@ const ChefCard = ({chef}) => {
             <h4>Experience : {years_of_experience} Years</h4>
             <h5>Numbers of recipes : {number_of_recipes}</h5>
             <h5>Likes: {likes}</h5>
-            <button className="btn btn-outline btn-warning ">
-              <div className="card-actions justify-end">
-                <div className="badge text-slate-100">View Recipes</div>
-              </div>
-            </button>
+            <Link to={`/chef/${_id}`}>
+              <button className="btn btn-outline btn-warning ">
+                <div className="card-actions justify-end">
+                  <div className="badge text-slate-100">View Recipes</div>
+                </div>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
