@@ -5,7 +5,9 @@ import {
   Typography,
   Button,
   IconButton,
+  Switch,
 } from "@material-tailwind/react";
+import { NavLink } from "react-router-dom";
 
 
 export default function Example() {
@@ -19,16 +21,16 @@ export default function Example() {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2   flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="/" className="flex items-center">
+        <NavLink to="/" className="flex items-center">
           Home
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -36,9 +38,9 @@ export default function Example() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <NavLink to={'/blog'} className="flex items-center">
           Blog
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -46,9 +48,9 @@ export default function Example() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Login
-        </a>
+        <NavLink to={"/login"} className="flex items-center">
+         Sign In
+        </NavLink>
         
       </Typography>
       
@@ -57,8 +59,8 @@ export default function Example() {
   );
 
   return (
-    <Navbar className="mx-auto text-black sticky top-0  mt-5 max-w-screen-xl py-2 px-4  ">
-      <div className="container mx-auto flex  sticky top-0 items-center justify-between text-blue-gray-900">
+    <Navbar className="mx-auto  text-black sticky top-0  mt-5 md:mb-8 md:mt-5 py-2 px-4  ">
+      <div className="container mx-auto flex  items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
@@ -70,19 +72,15 @@ export default function Example() {
               className="h-14"
               src="https://png.pngtree.com/png-clipart/20220705/ourmid/pngtree-illustration-of-male-chef-png-image_5683388.png"
             />
-            <h2>
-              Kitchen <span>Kismet</span>
+            <h2 className="text-2xl">
+              Chef <span>Trackers</span>
             </h2>
           </div>
         </Typography>
         <div className="hidden text-slate-500 lg:block">{navList}</div>
-        <Button
-          variant="gradient"
-          size="sm"
-          className="hidden text-black lg:inline-block"
-        >
-          <input type="checkbox" className="toggle" checked />
-        </Button>
+        <div>
+          <Switch defaultChecked />
+        </div>
         <div>
           <img
             className="h-10 rounded"
@@ -92,7 +90,7 @@ export default function Example() {
         </div>
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="ml-auto  w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >
