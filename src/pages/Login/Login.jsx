@@ -1,8 +1,65 @@
-import React from "react";
-import bannar from "../../../Public/BlobGroup.svg";
+import React, { useContext, useState } from "react";
 import { Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 const Login = () => {
+
+  const { signInWithEAndPd, scontinuewithGoogle, continuewithGithubGit } =
+    useContext(AuthContext);
+
+const [successful, Setsuccessful] = useState("");
+const [error, setError] = useState("");
+
+
+const loginOnsubmit = (event) =>{
+  Setsuccessful("");
+  setError("");
+  event.preventDefault();
+
+  const formValue = event.target;
+  const email = formValue.email.value;
+  const password = formValue.password.value;
+
+  signInWithEAndPd(email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+
+      console.log(user);
+      // ...
+      event.target.reset("");
+      Setsuccessful("Welcome back! Your login was successful.");
+
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      setError(errorMessage,errorCode)
+    });
+
+
+}
+
+const continuewithGoogle = () => {
+    scontinuewithGoogle()
+}
+
+const continuewithGitHub = () =>{
+    continuewithGithubGit()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <div
@@ -34,10 +91,10 @@ const Login = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Login to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form onSubmit={loginOnsubmit} className="space-y-4 md:space-y-6" action="#">
                 <div>
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your email
@@ -53,7 +110,7 @@ const Login = () => {
                 </div>
                 <div>
                   <label
-                    for="password"
+                    htmlFor="password"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Password
@@ -80,7 +137,7 @@ const Login = () => {
                     </div>
                     <div className="ml-3 text-sm">
                       <label
-                        for="remember"
+                        htmlFor="remember"
                         className="text-gray-500 dark:text-gray-300"
                       >
                         Remember me
@@ -95,15 +152,15 @@ const Login = () => {
                     Forgot password?
                   </a>
                 </div>
-                <div class="inline-flex items-center justify-center w-full">
-                  <hr class="w-72  mb-3 mt-3 h-px  bg-gray-200 border-0 dark:bg-gray-700" />
-                  <span class="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900">
+                <div className="inline-flex items-center justify-center w-full">
+                  <hr className="w-72  mb-3 mt-3 h-px  bg-gray-200 border-0 dark:bg-gray-700" />
+                  <span className="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900">
                     Or
                   </span>
                 </div>
                 <div className="flex flex-col gap-4 items-center justify-center">
                   <div className="">
-                    <Button
+                    <Button onClick={continuewithGoogle}
                       size="lg"
                       variant="outlined"
                       color="blue-gray"
@@ -118,7 +175,7 @@ const Login = () => {
                     </Button>
                   </div>
                   <div>
-                    <Button
+                    <Button onClick={continuewithGitHub}
                       size="lg"
                       variant="outlined"
                       color="blue-gray"
@@ -149,7 +206,10 @@ const Login = () => {
                   </Link>
                 </p>
               </form>
+              <p className="text-green-500">{successful}</p>
+              <p className="text-red-500">{error}</p>
             </div>
+            
           </div>
         </div>
       </section>
