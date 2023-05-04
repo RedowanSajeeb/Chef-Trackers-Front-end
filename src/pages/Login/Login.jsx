@@ -1,22 +1,27 @@
 import React, { useContext, useState } from "react";
 import { Button } from "@material-tailwind/react";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link,  useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+const providerGoogle = new GoogleAuthProvider();
+const githubprovider = new GithubAuthProvider()
 const Login = () => {
 
   const {
     signInWithEAndPd,
-    scontinuewithGoogle,
     user,
-    continuewithGithubGit,
     logout,
+    auth,
+    setReload,
+    setloding,
   } = useContext(AuthContext);
 
 const [successful, Setsuccessful] = useState("");
 const [error, setError] = useState("");
 
+const navigate = useNavigate()
 const location = useLocation();
-const form = location.state?.from?.pathname || "/";
+const from = location.state?.from?.pathname || "/";
 
 const loginOnsubmit = (event) =>{
   Setsuccessful("");
@@ -34,10 +39,10 @@ const loginOnsubmit = (event) =>{
 
       console.log(user);
       // ...
-      event.target.reset("");
+      formValue.reset("");
       Setsuccessful("Welcome back! Your login was successful.");
-      Navigate(form, { replace: true });
-
+      // Navigate(from, { replace: true });
+       navigate(from, { replace: true });
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -49,15 +54,52 @@ const loginOnsubmit = (event) =>{
 }
 
 const continuewithGoogle = () => {
-    scontinuewithGoogle()
-    Navigate(form, { replace: true });
+
+  signInWithPopup(auth,providerGoogle)
+    .then((result) => {
+      
+      const user = result.user;
+      console.log(user);
+        setloding(false);
+        setReload(true)
+        navigate(from, { replace: true} )
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage, errorCode);
+      // ...
+    });
+   
 }
 
+
 const continuewithGitHub = () =>{
-    continuewithGithubGit()
-}
-const signout = () =>{
- logout()
+   signInWithPopup(auth, githubprovider);
+  
+   navigate(from, { replace: true })
+     .then((result) => {
+       setloding(false);
+       setReload(true);
+       navigate(from, { replace: true });
+       // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+       const credential = GithubAuthProvider.credentialFromResult(result);
+       const token = credential.accessToken;
+      
+       // The signed-in user info.
+       const user = result.user;
+       // IdP data available using getAdditionalUserInfo(result)
+       // ...
+       console.log(user);
+     })
+     .catch((error) => {
+       // Handle Errors here.
+       const errorCode = error.code;
+       const errorMessage = error.message;
+       console.log(errorMessage, errorCode);
+       // ...
+     });
 }
 
   return (

@@ -8,7 +8,7 @@ import {
   Card,
   Tooltip,
 } from "@material-tailwind/react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 export default function Example() {
@@ -20,7 +20,10 @@ export default function Example() {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
-const { user } = useContext(AuthContext);
+const { user, logout } = useContext(AuthContext);
+  const loggggout = () => {
+    logout();
+  };
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
@@ -33,16 +36,15 @@ const { user } = useContext(AuthContext);
           Home
         </NavLink>
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <NavLink to={"/login"} className="flex items-center">
-          Sign In
-        </NavLink>
-      </Typography>
+      {user ? (
+        <Button onClick={loggggout} variant="secondary">
+          Logout
+        </Button>
+      ) : (
+        <Link to={"/login"}>
+          <Button variant="secondary">Sign In</Button>
+        </Link>
+      )}
       <Typography
         as="li"
         variant="small"

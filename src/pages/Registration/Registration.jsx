@@ -8,14 +8,14 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
-import { Form, Link, Navigate, useLocation } from "react-router-dom";
+import { Form, Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Registration = () => {
   const notify = () => toast("Here is your toast.");
   const [successful, Setsuccessful] = useState("");
   const [error,setError] = useState('')
-
+const navigate = useNavigate();
   const location = useLocation();
   const form = location.state?.from?.pathname || "/";
 
@@ -45,7 +45,7 @@ const Registration = () => {
         // ...
         updateAUser(name, photoUrl);
         event.target.reset("");
-        Navigate(form, { replace: true });
+        navigate(form, { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;
