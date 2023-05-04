@@ -23,7 +23,7 @@ const ViewRecipes = () => {
       <div className="mt-10">
         <div>
           {/* ------ */}
-          <div className="card lg:card-side bg-base-100 shadow-xl">
+          <div className="card mb-10 lg:card-side bg-base-100 shadow-xl">
             <figure>
               <img src={picture} alt="Album" />
             </figure>
