@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.active {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  color: rgb(255, 252, 248);
+  /* background: linear-gradient(90deg, #7e90fe 0%, #9873ff 100%);
+   */
+   background-color: black;
+}
 
 @media screen and (min-width: 1280px) {
   .side-container {

@@ -14,7 +14,7 @@ import { Pagination, Navigation } from "swiper";
 
 const SlidBannar = () => {
     return (
-      <div>
+      <div className='md:mt-5'>
         <Swiper
           pagination={{
             type: "progressbar",
@@ -25,19 +25,25 @@ const SlidBannar = () => {
         >
           <SwiperSlide>
             <img
-              src="https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-cartoon-chef-hiring-cartoon-background-image_186777.jpg"
+              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/gallery-2.jpg"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://claudecolliot.fr/wp-content/uploads/2022/08/food-bg-4-1200x699.jpg"
+              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/gallery-3.jpg"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://i.insider.com/56f1a96352bcd066018b81f0?width=1200&format=jpeg"
+              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/gallery-1.jpg"
+              alt=""
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/gallery-3.jpg"
               alt=""
             />
           </SwiperSlide>

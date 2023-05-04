@@ -61,7 +61,7 @@ const { user, logout } = useContext(AuthContext);
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to="#" className="flex items-center">
+        <NavLink to="/account" className="flex items-center">
           Account
         </NavLink>
       </Typography>

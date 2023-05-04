@@ -3,19 +3,19 @@
 
 
 
-![Logo](https://vectorise.net/logo/wp-content/uploads/2019/11/Logo-Boost-e-Wallet-app.png)
+![Logo](https://png.pngtree.com/png-clipart/20220705/ourmid/pngtree-illustration-of-male-chef-png-image_5683388.png)
 
 
 ## Project Live LINk
 
- - [ Netlify](https://sparkling-longma-539548.netlify.app/)
+ - [Live Site Link](https://cheftrackers.web.app/)
 
-## Features
+<!-- ## Features -->
 
-- Job Category List Show
+<!-- - Job Category List Show
 - Featured Jobs Section 
 - Job Details
-- Applied Jobs Seection
+- Applied Jobs Seection -->
 ---------
 ## Technology use this project
 
@@ -24,9 +24,8 @@
 - Vite
 - Javascript
 - tailwindcss.com
-- Html
-- Row css
 - && material-tailwind
+- ect
 ---------
 
 
