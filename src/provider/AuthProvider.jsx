@@ -1,5 +1,5 @@
-import React, { createContext } from "react";
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import React, { createContext, useEffect, useState } from "react";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
@@ -8,7 +8,9 @@ const provider = new GoogleAuthProvider();
 const providergit = new GithubAuthProvider();
 
 
+
 const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -63,9 +65,22 @@ const AuthProvider = ({ children }) => {
        });
   }
 
+  useEffect(()=>{
+
+    const connection = onAuthStateChanged(auth,(user)=>{
+            
+      setUser(user)
+
+    })
+    return ()=>{
+      return connection()
+    }
+
+  },[])
 
 
   const authInfApi = {
+    user,
     createUser,
     signInWithEAndPd,
     scontinuewithGoogle,

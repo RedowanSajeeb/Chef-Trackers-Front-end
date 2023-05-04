@@ -5,6 +5,8 @@ import ViewRecipes from "../pages/ViewRecipes/ViewRecipes";
 import Blog from "../pages/Blog/Blog";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
+import PrivateRoute from "./PrivateRoute";
+import UerrorPage from "../pages/UerrorPage";
 
 
 
@@ -19,7 +21,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef/:id",
-        element: <ViewRecipes></ViewRecipes>,
+        element: (
+          <PrivateRoute>
+            <ViewRecipes></ViewRecipes>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://chef-recipe-hunter-server-side-redowansajeeb.vercel.app/chef/${params.id}`
@@ -35,8 +41,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/registration",
-        element:<Registration></Registration>
+        element: <Registration></Registration>,
       },
+      {
+        path: "*",
+        element: <UerrorPage></UerrorPage>
+      }
     ],
   },
 ]);
