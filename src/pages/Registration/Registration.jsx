@@ -8,23 +8,28 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
-import { Form, Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import {
+  Form,
+  Link,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Registration = () => {
   const notify = () => toast("Here is your toast.");
   const [successful, Setsuccessful] = useState("");
-  const [error,setError] = useState('')
-const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
   const location = useLocation();
   const form = location.state?.from?.pathname || "/";
-
 
   const { createUser, updateAUser } = useContext(AuthContext);
 
   const registerSubmit = (event) => {
     Setsuccessful("");
-    setError('')
+    setError("");
     event.preventDefault();
 
     const formValue = event.target;
@@ -32,6 +37,17 @@ const navigate = useNavigate();
     const email = formValue.email.value;
     const password = formValue.password.value;
     const photoUrl = formValue.photoUrl.value;
+    if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+      setError("  Ensure string has two digits.");
+      return;
+    } else if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+      setError(" Ensure string has two uppercase letters");
+      return;
+    } else if (!/.{7}/.test(password)) {
+      // length
+      setError("Ensure string is of length 7.");
+      return;
+    }
 
     createUser(email, password)
       .then((userCredential) => {
@@ -52,12 +68,8 @@ const navigate = useNavigate();
         const errorMessage = error.message;
         // ..
         console.log(errorMessage, errorCode);
-        setError(errorMessage,errorCode)
+        setError(errorMessage, errorCode);
       });
-
-    // console.log(name, email, password, photoUrl);
-
-    
   };
 
   return (

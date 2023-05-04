@@ -1,106 +1,94 @@
 import React, { useContext, useState } from "react";
 import { Button } from "@material-tailwind/react";
-import { Link,  useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 const providerGoogle = new GoogleAuthProvider();
-const githubprovider = new GithubAuthProvider()
+const githubprovider = new GithubAuthProvider();
 const Login = () => {
+  const { signInWithEAndPd, user, logout, auth, setReload, setloding } =
+    useContext(AuthContext);
 
-  const {
-    signInWithEAndPd,
-    user,
-    logout,
-    auth,
-    setReload,
-    setloding,
-  } = useContext(AuthContext);
+  const [successful, Setsuccessful] = useState("");
+  const [error, setError] = useState("");
 
-const [successful, Setsuccessful] = useState("");
-const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-const navigate = useNavigate()
-const location = useLocation();
-const from = location.state?.from?.pathname || "/";
+  const loginOnsubmit = (event) => {
+    Setsuccessful("");
+    setError("");
+    event.preventDefault();
 
-const loginOnsubmit = (event) =>{
-  Setsuccessful("");
-  setError("");
-  event.preventDefault();
+    const formValue = event.target;
+    const email = formValue.email.value;
+    const password = formValue.password.value;
 
-  const formValue = event.target;
-  const email = formValue.email.value;
-  const password = formValue.password.value;
+    signInWithEAndPd(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
 
-  signInWithEAndPd(email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
+        console.log(user);
+        // ...
+        formValue.reset("");
+        Setsuccessful("Welcome back! Your login was successful.");
+        // Navigate(from, { replace: true });
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(errorMessage, errorCode);
+      });
+  };
 
-      console.log(user);
-      // ...
-      formValue.reset("");
-      Setsuccessful("Welcome back! Your login was successful.");
-      // Navigate(from, { replace: true });
-       navigate(from, { replace: true });
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      setError(errorMessage,errorCode)
-    });
-
-
-}
-
-const continuewithGoogle = () => {
-
-  signInWithPopup(auth,providerGoogle)
-    .then((result) => {
-      
-      const user = result.user;
-      console.log(user);
+  const continuewithGoogle = () => {
+    signInWithPopup(auth, providerGoogle)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
         setloding(false);
-        setReload(true)
-        navigate(from, { replace: true} )
-    })
-    .catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage, errorCode);
-      // ...
-    });
-   
-}
+        setReload(true);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage, errorCode);
+        // ...
+      });
+  };
 
-
-const continuewithGitHub = () =>{
-   signInWithPopup(auth, githubprovider);
-  
-   navigate(from, { replace: true })
-     .then((result) => {
-       setloding(false);
-       setReload(true);
-       navigate(from, { replace: true });
-       // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-       const credential = GithubAuthProvider.credentialFromResult(result);
-       const token = credential.accessToken;
-      
-       // The signed-in user info.
-       const user = result.user;
-       // IdP data available using getAdditionalUserInfo(result)
-       // ...
-       console.log(user);
-     })
-     .catch((error) => {
-       // Handle Errors here.
-       const errorCode = error.code;
-       const errorMessage = error.message;
-       console.log(errorMessage, errorCode);
-       // ...
-     });
-}
+  const continuewithGitHub = () => {
+    signInWithPopup(auth, githubprovider)
+      .then((result) => {
+        setloding(false);
+        setReload(true);
+        navigate(from, { replace: true });
+        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage, errorCode);
+        // ...
+      });
+  };
 
   return (
     <div>
@@ -238,13 +226,13 @@ const continuewithGitHub = () =>{
                     </Button>
                   </div>
                 </div>
-              
-                  <button
-                    type="submit"
-                    className="w-full bg-black text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                  >
-                    Sign in
-                  </button>
+
+                <button
+                  type="submit"
+                  className="w-full bg-black text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  Sign in
+                </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
                   <Link

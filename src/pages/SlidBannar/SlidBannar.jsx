@@ -25,19 +25,19 @@ const SlidBannar = () => {
         >
           <SwiperSlide>
             <img
-              src="https://www.shutterstock.com/image-photo/facebook-cover-autumn-background-yellow-260nw-1223596375.jpg"
+              src="https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-cartoon-chef-hiring-cartoon-background-image_186777.jpg"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://i.pinimg.com/736x/29/cb/89/29cb89853973a4fa21895b29f4f92cd1.jpg"
+              src="https://claudecolliot.fr/wp-content/uploads/2022/08/food-bg-4-1200x699.jpg"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
-              src="https://www.shutterstock.com/image-photo/facebook-cover-autumn-background-yellow-260nw-1223596375.jpg"
+              src="https://i.insider.com/56f1a96352bcd066018b81f0?width=1200&format=jpeg"
               alt=""
             />
           </SwiperSlide>
