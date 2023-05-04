@@ -59,7 +59,7 @@ export default function Example() {
   );
 
   return (
-    <Navbar className="mx-auto  text-black sticky top-0  mt-5 md:mb-8 md:mt-5 py-2 px-4  ">
+    <Navbar className="mx-auto   text-black sticky top-0  mt-5 md:mb-8 md:mt-5  ">
       <div className="container mx-auto flex  items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
@@ -72,7 +72,7 @@ export default function Example() {
               className="h-14"
               src="https://png.pngtree.com/png-clipart/20220705/ourmid/pngtree-illustration-of-male-chef-png-image_5683388.png"
             />
-            <h2 className="text-2xl">
+            <h2 className="text-lg">
               Chef <span>Trackers</span>
             </h2>
           </div>
