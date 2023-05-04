@@ -7,9 +7,9 @@ const ChefCard = ({chef}) => {
     // console.log(chef);
     return (
       <div className="md:mb-20">
-        <div className=" md:mt-20 card w-96 bg-base-100 shadow-xl">
+        <div className=" md:mt-20  card md:w-96 bg-base-100 shadow-xl">
           <figure>
-            <img src={picture} alt="chef" />
+            <img className='w-fit h-96' src={picture} alt="chef" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{name}</h2>

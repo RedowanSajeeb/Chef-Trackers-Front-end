@@ -37,60 +37,27 @@ const ClientsSay = () => {
             data-swiper-parallax="-23%"
           ></div>
           <SwiperSlide>
-            <div className="title" data-swiper-parallax="-300">
-              Slide 1
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
-            <div className="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
+            <div className="text " data-swiper-parallax="-100">
+              <img
+                src="https://lh3.googleusercontent.com/-2ABrXEcBGD3A7dr7y7tTKngvPSzeQqm9jPhTpMx8NgfP1KvjSfbbPY1UWl5hoPb9wWQ9nhFr4gbnfSKUeWdV3_880MdmV-rwtNkbSQG"
+                alt=""
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="title" data-swiper-parallax="-300">
-              Slide 2
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
             <div className="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
+              <img
+                src="https://lh3.googleusercontent.com/L15utYktdQ2JmaJ6VOIlUMnbfm8TPFtTh6z2sfsOpZQPTFMGdJO-H9_QWAvSZfEH8g4UMKv7-6V3REijypaf38fJ6CFTiOh4qImqbWrT"
+                alt=""
+              />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="title" data-swiper-parallax="-300">
-              Slide 3
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
             <div className="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
+              <img className='h-full'
+                src="https://lh3.googleusercontent.com/gz2PkksBRxXPgP2qzWOzg0ZSvPV1Zy8icFUEIaZAvBUsUAaNxbbjJm-HmDIHr7YmgdIaLdqX4RKZj0Z_Dd0CrxYnbvTEJX7TChNAgj_I"
+                alt=""
+              />
             </div>
           </SwiperSlide>
         </Swiper>

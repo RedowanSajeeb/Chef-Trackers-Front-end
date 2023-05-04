@@ -2,9 +2,9 @@ import React from 'react';
 
 const Booking = () => {
     return (
-      <div className="mt-16  w-1/2 mx-auto">
-        <h2>Table Booking</h2>
-        <h1>Pre-Order to Make a Reservation</h1>
+      <div className="mt-16 ms-2 me-2 md:w-1/2 md:mx-auto">
+        <h2 className='text-3xl text-deep-orange-800 mb-2 mt-6'>Table Booking</h2>
+        <h1 className='text-base'>Pre-Order to Make a Reservation</h1>
         <div>
           <form className="mt-10 mb-20 bg-white p-10 rounded-lg drop-shadow-2xl">
             <div className="relative z-0 w-52  mb-6 group">
@@ -143,7 +143,7 @@ const Booking = () => {
             <div>
               <label>
                 <textarea
-                  className="bg-transparent mb-5 border-0 border-b-2 border-gray-300 "
+                  className="bg-transparent w-1/2 md:w-full   mb-5 border-0 border-b-2 border-gray-300 "
                   name="text"
                   cols="90"
                   rows="4"
