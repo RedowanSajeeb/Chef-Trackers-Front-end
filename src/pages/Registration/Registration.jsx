@@ -10,12 +10,16 @@ import { Link } from "react-router-dom";
 const Registration = () => {
   return (
     <div>
-      <Card className="mt-10" color="transparent" shadow={false}>
-        <Typography variant="h4" color="blue-gray">
-          <h1 className="text-center">Sign Up</h1>
+      <Card className="mt-10" color="white" shadow={false}>
+        <Typography className="text-center" variant="h4" color="blue-gray">
+          Sign Up
         </Typography>
-        <Typography color="gray" className="mt-1 font-normal">
-          <h5 className="text-center">Enter your details to register.</h5>
+        <Typography
+          
+          color="gray"
+          className="mt-1 text-center font-normal"
+        >
+          Enter your details to register.
         </Typography>
         <form className="mt-8 mx-auto mb-2 w-80 max-w-screen-lg sm:w-96">
           <div className="mb-4 flex flex-col gap-6">
