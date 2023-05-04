@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup,  updateProfile } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
@@ -11,18 +11,21 @@ const providergit = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loding, setloding] = useState(true);
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
 
   const signInWithEAndPd = (email,password) =>{
+      setloding(false)
      return signInWithEmailAndPassword(auth,email,password)
   }
 
   const scontinuewithGoogle = () =>{
 
     signInWithPopup(auth, provider)
+     setloding(false)
       .then((result) => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -45,6 +48,7 @@ const AuthProvider = ({ children }) => {
 
   const continuewithGithubGit = () =>{
      signInWithPopup(auth, providergit)
+       setloding(false)
        .then((result) => {
          // This gives you a GitHub Access Token. You can use it to access the GitHub API.
          const credential = GithubAuthProvider.credentialFromResult(result);
@@ -65,10 +69,29 @@ const AuthProvider = ({ children }) => {
        });
   }
 
+const updateAUser = (displayName, photoURL) => {
+  console.log(displayName,photoURL);
+   updateProfile(auth.currentUser, {
+    displayName: `${displayName}`,
+    photoURL: `${photoURL}`,
+  })
+    .then(() => {
+      // Profile updated!
+      // ...
+      console.log();
+    })
+    .catch((error) => {
+      // An error occurred
+      // ...
+      console.log(error);
+    });
+};
+
+
   useEffect(()=>{
 
     const connection = onAuthStateChanged(auth,(user)=>{
-            
+      setloding(false)      
       setUser(user)
 
     })
@@ -81,10 +104,12 @@ const AuthProvider = ({ children }) => {
 
   const authInfApi = {
     user,
+    loding,
     createUser,
     signInWithEAndPd,
     scontinuewithGoogle,
     continuewithGithubGit,
+    updateAUser,
   };
 
   return (

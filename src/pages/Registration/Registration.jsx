@@ -16,7 +16,7 @@ const Registration = () => {
   const [successful, Setsuccessful] = useState("");
   const [error,setError] = useState('')
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateAUser } = useContext(AuthContext);
 
   const registerSubmit = (event) => {
     Setsuccessful("");
@@ -39,6 +39,7 @@ const Registration = () => {
         setError("");
         Setsuccessful("Congratulations! Your Registration was Successful !");
         // ...
+        updateAUser(name, photoUrl);
         event.target.reset("");
       })
       .catch((error) => {
@@ -49,7 +50,9 @@ const Registration = () => {
         setError(errorMessage,errorCode)
       });
 
-    console.log(name, email, password, photoUrl);
+    // console.log(name, email, password, photoUrl);
+
+    
   };
 
   return (
