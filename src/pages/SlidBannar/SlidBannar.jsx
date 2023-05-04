@@ -45,5 +45,5 @@ const SlidBannar = () => {
       </div>
     );
 };
-
+// /
 export default SlidBannar;
