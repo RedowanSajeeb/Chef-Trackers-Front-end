@@ -16,9 +16,13 @@ const ViewRecipeOne = ({ recipe }) => {
            border-gray-200 rounded-b-lg md:rounded-lg pb-14  dark:border-gray-700"
           >
             <blockquote class="  mb-4  lg:mb-8 ">
-              <h3 class="text-lg text-center font-semibold text-deep-orange-700">{name}</h3>
+              <h3 class="text-lg text-center font-semibold text-deep-orange-700">
+                {name}
+              </h3>
               <p className="my-4">
-                <span className="text-2xl text-deep-orange-700">Ingredients:</span>
+                <span className="text-2xl text-deep-orange-700">
+                  Ingredients:
+                </span>
               </p>
               <ul>
                 {ingredients.map((ingredient, index) => (
@@ -42,7 +46,9 @@ const ViewRecipeOne = ({ recipe }) => {
             </div>
             <button className="btn btn-outline btn-warning mt-6 ">
               <div className="card-actions justify-end">
-                <div className="badge text-slate-100">Favorite button</div>
+                <div className="badge text-slate-100">
+                  Favorite &#10084;&#65039;
+                </div>
               </div>
             </button>
           </figure>
