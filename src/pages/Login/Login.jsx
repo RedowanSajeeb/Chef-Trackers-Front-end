@@ -50,6 +50,7 @@ const loginOnsubmit = (event) =>{
 
 const continuewithGoogle = () => {
     scontinuewithGoogle()
+    Navigate(form, { replace: true });
 }
 
 const continuewithGitHub = () =>{
