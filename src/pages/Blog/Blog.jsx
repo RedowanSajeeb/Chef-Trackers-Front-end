@@ -5,12 +5,17 @@ const Blog = () => {
   
     return (
       <div ref={ref} className="">
-        <div>
+        <div className="btn btn-outline btn-warning mt-4 mt-10 ms-3">
           <Pdf targetRef={ref} filename="code-example.pdf">
-            {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+            {({ toPdf }) => (
+              <button className="badge text-slate-100" onClick={toPdf}>
+                Generate Pdf
+              </button>
+            )}
           </Pdf>
-          ;
+          
         </div>
+        
         <div
           tabIndex={0}
           className="collapse mt-10 mb-10 collapse-plus border border-base-300 bg-base-100 rounded-box"
