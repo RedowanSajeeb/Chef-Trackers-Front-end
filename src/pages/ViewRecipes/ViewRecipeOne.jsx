@@ -3,15 +3,15 @@ import React, { useState } from "react";
 import { useAlert } from "react-alert";
 const ViewRecipeOne = ({ recipe }) => {
   const alert = useAlert();
-  const [favorit,Setfavorit] = useState(false)
+  const [favorit, Setfavorit] = useState(false);
   // console.log(recipe);
   const { name, ingredients, cooking_method, rating } = recipe;
   // console.log(ingredients);
 
- const favoriteBtnHandel = () =>{
-          Setfavorit(true)
-           alert.success("Recipe added Happy Cooking!");       
- }
+  const favoriteBtnHandel = () => {
+    Setfavorit(true);
+    alert.success("Recipe added Happy Cooking!");
+  };
   return (
     <div>
       <div>
