@@ -27,8 +27,10 @@ const WeAreDoing = () => {
                 </h1>
                 <p className="text-gray-500">
                   {" "}
-                  Porro nemo veniam necessitatibus praesentium eligendi rem
-                  temporibus adipisci quo modi numquam.
+                  Being located in the city center offers convenient access to
+                  local attractions, shopping, and dining options. It also
+                  provides easy transportation access to other parts of the
+                  city, making it a desirable location for visitors.
                 </p>
               </div>
             </div>
@@ -42,8 +44,10 @@ const WeAreDoing = () => {
                 </h1>
                 <p className="text-gray-500">
                   {" "}
-                  Consectetur numquam porro nemo veniam necessitatibus
-                  praesentium eligendi rem temporibus adipisci quo modi.
+                  Fresh, organic ingredients are natural and free of harmful
+                  chemicals, providing optimal nutrition and flavor. They are
+                  often preferred by health-conscious individuals and are used
+                  in many recipes to create delicious and wholesome meals.
                 </p>
               </div>
             </div>
@@ -55,8 +59,11 @@ const WeAreDoing = () => {
                 <h1 className="mb-4 font-bold text-2xl">Own fast delivery</h1>
                 <p className="text-gray-500">
                   {" "}
-                  Necessitatibus praesentium eligendi rem temporibus adipisci
-                  quo modi. Lorem ipsum dolor sit.
+                  Fast delivery is a convenient and efficient service that
+                  provides customers with their orders in a timely manner. It is
+                  often appreciated for its convenience, especially for
+                  time-sensitive purchases. Companies that offer fast delivery
+                  can gain a competitive advantage in the marketplace.
                 </p>
               </div>
             </div>
