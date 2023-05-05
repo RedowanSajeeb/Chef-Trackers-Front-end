@@ -32,24 +32,26 @@ const { user, logout } = useContext(AuthContext);
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to="/" className="flex items-center">
+        <NavLink to="/" className="flex fontStyle items-center">
           Home
         </NavLink>
       </Typography>
       {user ? (
-        <Button onClick={loggggout} variant="secondary">
+        <button className="fontStyle" onClick={loggggout} variant="secondary">
           Logout
-        </Button>
+        </button>
       ) : (
         <Link to={"/login"}>
-          <Button variant="secondary">Sign In</Button>
+          <button className="fontStyle" variant="secondary">
+            Sign In
+          </button>
         </Link>
       )}
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-normal fontStyle"
       >
         <NavLink to={"/blog"} className="flex items-center">
           Blog
@@ -61,7 +63,7 @@ const { user, logout } = useContext(AuthContext);
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <NavLink to="/account" className="flex items-center">
+        <NavLink to="/account" className="flex fontStyle items-center">
           Account
         </NavLink>
       </Typography>
@@ -82,8 +84,8 @@ const { user, logout } = useContext(AuthContext);
                 className="h-14"
                 src="https://png.pngtree.com/png-clipart/20220705/ourmid/pngtree-illustration-of-male-chef-png-image_5683388.png"
               />
-              <h2 className="text-lg">
-                Chef <span>Trackers</span>
+              <h2 className="text-lg fontStyle ">
+                Chef <span className="text-amber-900">Trackers</span>
               </h2>
             </div>
           </Typography>
