@@ -8,7 +8,7 @@ const ChefCard = ({chef}) => {
     // console.log(chef);
     return (
       <div className=" mt-16 md:mt-20">
-        <div className="card h-full  w-96 glass">
+        <div className="card h-full  w-auto glass">
           <figure>
             <LazyLoad>
               <img

@@ -27,7 +27,7 @@ const Chef = () => {
         <span className="mt-7  ">Talented Chefs</span>{" "}
         {/* <hr className="w-72 mt-3  mx-auto" /> */}
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-y-7">
+      <div className="grid grid-cols-1 gap-x-10 md:grid-cols-3 md:gap-y-7">
         {data.map((chef) => (
           <ChefCard key={chef._id} chef={chef}></ChefCard>
         ))}
