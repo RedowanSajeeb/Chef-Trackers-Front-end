@@ -7,7 +7,7 @@ import Navbarf from "../pages/Navbar/Navbarf";
 
 const Main = () => {
   return (
-    <div className="body-font ">
+    <div className="body-font overflow-hidden ">
       <Navbarf></Navbarf>
       <Outlet></Outlet>
       <Footer></Footer>

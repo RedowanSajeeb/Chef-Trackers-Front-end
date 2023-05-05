@@ -10,7 +10,7 @@ import Liketoday from "../../pages/Liketoday";
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <SlidBannar></SlidBannar>
       <WeAreDoing></WeAreDoing>
       <Chef></Chef>
