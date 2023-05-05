@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazy-load';
 const ClientMan = () => {
     return (
       <div className=" sm:mt-48 md:grid grid-cols-2   items-center">
-        <div>
+        <div data-aos="fade-up-right">
           <LazyLoad>
             <img
               className=""
@@ -14,7 +14,7 @@ const ClientMan = () => {
             />
           </LazyLoad>
         </div>
-        <div>
+        <div data-aos="fade-up-left">
           <h2 className="text-amber-700 md:mt-28 text-font text-7xl">
             Our Testimonial
           </h2>
