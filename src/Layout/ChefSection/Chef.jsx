@@ -21,10 +21,17 @@ const Chef = () => {
 
 
   return (
-    <div className="grid grid-cols-1  ms-5 me-5 md:grid-cols-3 md:gap-y-7">
-      {data.map((chef) => (
-        <ChefCard key={chef._id} chef={chef}></ChefCard>
-      ))}
+    <div>
+      <h1 className="md:mt-28 mt-14  divide-amber-800 text-amber-800 fontStyle text-center md:text-5xl text-4xl font-bold">
+        Our <span className="text-font">Most</span> popular <br />{" "}
+        <span className="mt-7  ">Talented Chefs</span>{" "}
+        {/* <hr className="w-72 mt-3  mx-auto" /> */}
+      </h1>
+      <div className="grid grid-cols-1  ms-5 me-5 md:grid-cols-3 md:gap-y-7">
+        {data.map((chef) => (
+          <ChefCard key={chef._id} chef={chef}></ChefCard>
+        ))}
+      </div>
     </div>
   );
 };

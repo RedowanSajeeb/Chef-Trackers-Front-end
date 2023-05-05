@@ -13,9 +13,11 @@ const WeAreDoing = () => {
         </div>
         <div>
           <div className="md:ms-48 ">
-            <h1 className="md:text-5xl text-4xl font-bold mb-14">
+            <h1 className="md:text-5xl text-4xl   font-bold mb-14">
               We are doing more than you{" "}
-              <span className="text-amber-700 fontStyle">expect</span>
+              <span className="text-amber-700 fontStyle">
+                expect <hr className="w-28 ms-60  " />
+              </span>
             </h1>
             <div className="flex">
               <h1 className="text-font text-6xl me-5 text-amber-700 ">01</h1>
