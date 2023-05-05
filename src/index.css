@@ -13,7 +13,9 @@
    */
    background-color: black;
 }
-
+.disabled{
+  
+}
 @media screen and (min-width: 1280px) {
   .side-container {
     margin-left: 200px;
