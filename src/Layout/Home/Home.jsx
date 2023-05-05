@@ -1,9 +1,10 @@
 import React from 'react';
 import OurStory from '../../pages/OurStory';
-import Chef from './ChefSection/Chef';
+
 import SlidBannar from '../../pages/SlidBannar/SlidBannar';
 import ClientMan from '../../pages/ClientsSay/ClientMan';
 import Booking from '../../pages/Booking/Booking';
+import Chef from '../ChefSection/Chef';
 
 
 
