@@ -12,7 +12,7 @@ const SlidBannar = () => {
     >
       <div className="side-container mt-10 mb-10 ms-3 me-3 md:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-          <div className="">
+          <div data-aos="fade-right">
             <h2 className="text-5xl mt-5 mb-4">
               <span className="text-amber-700 fontStyle">Hey</span> Thare,
             </h2>
@@ -25,11 +25,17 @@ const SlidBannar = () => {
               selection of traditional and modern Australian dishes, created by
               the most talented chefs from all over the country!"
             </p>
+            <div>
+              <button className="btn btn-warning me-2 text-dark fontStyle">
+                Our Menu
+              </button>
+              <button className="btn btn-outline">About Us</button>
+            </div>
           </div>
           <div>
             <LazyLoad>
               <img
-                className="rounded-full  "
+                className="rounded-full"
                 src="https://purepng.com/public/uploads/large/purepng.com-chefmanpeoplepersonsmalechef-112152511022675y2z.png"
                 alt="photo"
                 data-aos="fade-left"
