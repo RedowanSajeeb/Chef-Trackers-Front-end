@@ -7,7 +7,7 @@ const ChefCard = ({chef}) => {
       chef;
     // console.log(chef);
     return (
-      <div className="side-container  me-auto mt-16 md:mt-20">
+      <div className=" mt-16 md:mt-20">
         <div className="card h-full  w-96 glass">
           <figure>
             <LazyLoad>

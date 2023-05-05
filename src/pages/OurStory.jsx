@@ -11,7 +11,7 @@ const OurStory = () => {
           height: "695px",
         }}
       >
-        <div className="md:grid side-container  grid-cols-2 ms-5 mt-10">
+        <div className="md:grid side-container   grid-cols-2 ms-5 mt-10">
           <div className="">
             <h1 className="text-amber-700 mt-28 text-font text-7xl mb-5 ">
               Our Story

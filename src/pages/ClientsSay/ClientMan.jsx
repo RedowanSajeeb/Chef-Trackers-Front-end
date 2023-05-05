@@ -4,19 +4,27 @@ import LazyLoad from 'react-lazy-load';
 
 const ClientMan = () => {
     return (
-      <div className="md:grid grid-cols-2 items-center">
+      <div className=" sm:mt-48 md:grid grid-cols-2  items-center">
         <div>
           <LazyLoad>
             <img
+              className=""
               src="https://fastwpdemo.com/newwp/ticrou/wp-content/uploads/2022/09/men-1.png"
               alt=""
             />
           </LazyLoad>
         </div>
         <div>
-          <h2 className="text-4xl text-orange-900 mb-2">Our Testimonial</h2>
-          <h1 className="text-lg">
-            What Clients Say About <span>Chef Trackers</span>
+          <h2 className="text-amber-700 md:mt-28 text-font text-7xl">
+            Our Testimonial
+          </h2>
+          <h1 className="text-lg fontStyle ">
+            What{" "}
+            <span className="fontStyle text-4xl text-amber-700">
+              Clients Say
+            </span>{" "}
+            About{" "}
+            <span className="text-amber-900 fontStyle">Chef Trackers</span>
           </h1>
           <div>
             <ClientsSay></ClientsSay>

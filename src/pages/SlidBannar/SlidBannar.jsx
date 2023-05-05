@@ -10,7 +10,7 @@ const SlidBannar = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="side-container mt-10 mb-10 ms-3 me-3 md:mt-20">
+      <div className="side-container  mt-10 mb-10 ms-3 me-3 md:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
           <div data-aos="fade-right">
             <h2 className="text-5xl mt-5 mb-4">
