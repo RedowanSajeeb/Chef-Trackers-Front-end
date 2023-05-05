@@ -11,18 +11,23 @@ const ChefCard = ({chef}) => {
         <div className="card h-full  w-auto glass">
           <figure>
             <LazyLoad>
-              <img
-                className="h-96"
-                src={picture}
-                alt="car!"
-              />
+              <img className="h-96" src={picture} alt="car!" />
             </LazyLoad>
           </figure>
           <div className="card-body">
-            <h2 className="card-title mb-4">{name}</h2>
-            <h4>Experience : {years_of_experience} Years</h4>
-            <h5>Numbers of recipes : {number_of_recipes}</h5>
-            <h5>Likes: {likes}</h5>
+            <h2 className="card-title mb-4 ">{name}</h2>
+            <h4>
+              <span className="font-bold">Experience :</span>{" "}
+              <span className="fontStyle"> {years_of_experience} Years</span>
+            </h4>
+            <h5>
+              <span className="font-bold">Numbers of recipes :</span>{" "}
+              <span className="fontStyle">{number_of_recipes}</span>
+            </h5>
+            <h5>
+              <span className="font-bold">Likes:</span>{" "}
+              <span className="fontStyle">{likes}</span>
+            </h5>
             <p className="mt-4">{short_bio}</p>
             <div className="card-actions justify-end">
               <Link to={`/chef/${_id}`}>

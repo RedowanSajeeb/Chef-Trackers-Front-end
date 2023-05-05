@@ -67,6 +67,7 @@ const { user, logout } = useContext(AuthContext);
           Account
         </NavLink>
       </Typography>
+      <input type="checkbox" className="toggle" checked />
     </ul>
   );
 

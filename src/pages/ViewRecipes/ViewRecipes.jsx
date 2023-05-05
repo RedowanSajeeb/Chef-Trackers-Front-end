@@ -20,25 +20,33 @@ const ViewRecipes = () => {
       recipes
     } = useLoaderData();
     return (
-      <div className="mt-10">
+      <div className="mt-10 side-container">
         <div>
           {/* ------ */}
           <div className="card mb-10 lg:card-side bg-base-100 shadow-xl">
             <figure>
-              <img src={picture} alt="Album" />
+              <img className="h-96" src={picture} alt="Album" />
             </figure>
             <div className="mt-20 ms-10 me-5">
-              <h2 className="card-title">{name}</h2>
+              <h2 className="card-title fontStyle mt-5 text-2xl font-bold text-amber-700">
+                {name}
+              </h2>
               <p>{short_bio}</p>
               <div className="mt-5">
-                <h1>{likes} likes</h1>
-                <h1>number of recipes: {number_of_recipes}</h1>
-                <h1>years of experience:{years_of_experience}</h1>
+                <h1 className="fontStyle mt-5 text-2xl font-bold ">
+                  {likes} likes
+                </h1>
+                <h1 className="fontStyle mt-5 text-2xl font-bold ">
+                  number of recipes: {number_of_recipes}
+                </h1>
+                <h1 className="fontStyle mt-5 text-2xl font-bold mb-10 ">
+                  years of experience:{years_of_experience}
+                </h1>
               </div>
             </div>
           </div>
 
-          <div className="grid mt-10 gap-4  mb-40 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
+          <div className=" md:grid grid-cols-3   mt-10 gap-4 mb-40 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 ">
             {recipes.map((recipe, indx) => (
               <ViewRecipeOne key={indx} recipe={recipe}></ViewRecipeOne>
             ))}
