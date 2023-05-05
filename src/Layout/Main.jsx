@@ -7,7 +7,7 @@ import Navbarf from "../pages/Navbar/Navbarf";
 
 const Main = () => {
   return (
-    <div className="side-container">
+    <div className="">
      
       <Navbarf></Navbarf>
       <Outlet></Outlet>

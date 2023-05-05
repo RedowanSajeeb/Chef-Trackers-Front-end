@@ -70,8 +70,8 @@ const { user, logout } = useContext(AuthContext);
 
   return (
     <>
-      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
-        <div className="flex items-center justify-between text-blue-gray-900">
+      <Navbar className="sticky  inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+        <div className="flex  items-center justify-evenly text-blue-gray-900">
           <Typography
             as="a"
             href="#"
@@ -79,7 +79,7 @@ const { user, logout } = useContext(AuthContext);
           >
             <div className="flex items-center">
               <img
-                className="h-10"
+                className="h-14"
                 src="https://png.pngtree.com/png-clipart/20220705/ourmid/pngtree-illustration-of-male-chef-png-image_5683388.png"
               />
               <h2 className="text-lg">
