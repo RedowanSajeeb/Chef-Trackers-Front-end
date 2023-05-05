@@ -23,7 +23,7 @@ const Chef = () => {
   return (
     <div>
       <h1 className="md:mt-28 mt-14  divide-amber-800 text-amber-800 fontStyle text-center md:text-5xl text-4xl font-bold">
-        Our <span className="text-font">Most</span> popular <br />{" "}
+        Our <span className="fontStyle">Most</span> popular <br />{" "}
         <span className="mt-7  ">Talented Chefs</span>{" "}
         {/* <hr className="w-72 mt-3  mx-auto" /> */}
       </h1>
