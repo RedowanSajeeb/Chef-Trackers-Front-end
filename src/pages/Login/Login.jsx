@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Button, alert } from "@material-tailwind/react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
@@ -16,7 +17,7 @@ const Login = () => {
 const alert = useAlert();
   const [successful, Setsuccessful] = useState("");
   const [error, setError] = useState("");
-
+const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -162,14 +163,26 @@ if(password !== confirmpassword){
                   >
                     Password
                   </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required
-                  />
+                  <div className="flex">
+                    <input
+                      type={show ? "text" : "password"}
+                      name="password"
+                      id="password"
+                      placeholder="••••••••"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                    <div
+                      onClick={() => setShow(!show)}
+                      className="absolute ms-80"
+                    >
+                      {show ? (
+                        <AiOutlineEyeInvisible className="text-4xl "></AiOutlineEyeInvisible>
+                      ) : (
+                        <AiOutlineEye className="text-4xl  "></AiOutlineEye>
+                      )}
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <label
@@ -179,7 +192,7 @@ if(password !== confirmpassword){
                     Confirm password
                   </label>
                   <input
-                    type="password"
+                    type={show ? "text" : "password"}
                     name="confirmpassword"
                     id="cpassword"
                     placeholder="••••••••"

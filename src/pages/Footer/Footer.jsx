@@ -81,6 +81,9 @@ const Footer = () => {
             </div>
           </div>
         </footer>
+        <div className="text-center mb-6">
+          <p>Copyright © 2023 - All right reserved by Chef Trackers</p>
+        </div>
       </div>
     );
 };

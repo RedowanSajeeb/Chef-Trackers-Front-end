@@ -4,7 +4,12 @@ const WeAreDoing = () => {
   return (
     <div className="side-container  md:mt-28 mt-10 ms-3 me-3">
       <div className="md:flex ">
-        <div data-aos="fade-right">
+        <div
+          data-aos-offset="100"
+          data-aos-easing="ease-in-sine"
+          data-aos="fade-right"
+        >
+          {/* data-aos-offset="300" data-aos-easing="ease-in-sine" */}
           <img
             className=" mb-10 rounded-lg Right-to-left md:ms-28 h-full"
             src="https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2021/04/18050226/Sky-Garden.jpg"

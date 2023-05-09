@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { AiOutlineEye ,AiOutlineEyeInvisible } from "react-icons/ai";
 
 import {
   Card,
@@ -21,6 +22,7 @@ const Registration = () => {
   const notify = () => toast("Here is your toast.");
   const [successful, Setsuccessful] = useState("");
   const [error, setError] = useState("");
+  const [show,setShow] = useState(false)
   const navigate = useNavigate();
   const location = useLocation();
   const form = location.state?.from?.pathname || "/";
@@ -37,6 +39,14 @@ const Registration = () => {
     const email = formValue.email.value;
     const password = formValue.password.value;
     const photoUrl = formValue.photoUrl.value;
+    const confirmpassword = formValue.cmpassword.value;
+    setError('')
+ if(password == confirmpassword){
+    return setError(
+      "Make sure that the password and confirmation password fields match exactly"
+    );
+ }
+
     console.log(photoUrl);
     if (!/(?=.*\d)/.test(password)) {
       setError("should contain at least one digit");
@@ -93,29 +103,51 @@ const Registration = () => {
           <div className="mb-4 flex flex-col gap-6 form-control">
             <Input name="name" size="lg" label="Name" required />
             <Input name="email" size="lg" label="Email" required />
-            <Input
-              name="password"
-              type="password"
-              size="lg"
-              label="Password"
-              required
-            />
+            <div className="flex  items-center justify-center">
+              <Input
+                name="password"
+                type={show ? "text" : "password"}
+                size="lg"
+                label="Password"
+                required
+              />
+              <div onClick={() => setShow(!show)} className="absolute ms-80">
+                {show ? (
+                  <AiOutlineEyeInvisible className="text-4xl "></AiOutlineEyeInvisible>
+                ) : (
+                  <AiOutlineEye className="text-4xl  "></AiOutlineEye>
+                )}
+              </div>
+            </div>
+
+            <div>
+              <Input
+                name="cmpassword"
+                type={show ? "text" : "password"}
+                size="lg"
+                label=" Confirm password"
+                required
+              />
+            </div>
+
             <Input name="photoUrl" size="lg" label="Photo URL" required />
+
             <label className="block">
               <span className="sr-only">Choose profile photo</span>
               <input
                 // name="photoUrl"
                 type="file"
                 className="block w-full text-sm text-slate-500
-      file:mr-4 file:py-2 file:px-4
-      file:rounded-full file:border-0
-      file:text-sm file:font-semibold
-      file:bg-violet-50 file:text-violet-700
-      hover:file:bg-violet-100
-    "
+                  file:mr-4 file:py-2 file:px-4
+                  file:rounded-full file:border-0
+                  file:text-sm file:font-semibold
+                  file:bg-violet-50 file:text-violet-700
+                  hover:file:bg-violet-100
+                "
               />
             </label>
           </div>
+
           <h1>{successful}</h1>
           <Checkbox
             label={
