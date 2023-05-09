@@ -20,27 +20,28 @@
 ---------
 ## Technology use this project
 
-  "@heroicons/react": "^2.0.17",
-    "@material-tailwind/react": "^1.4.2",
-    "@smastrom/react-rating": "^1.3.1",
-    "aos": "^2.3.4",
-    "daisyui": "^2.51.6",
-    "firebase": "^9.21.0",
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
-    "react": "^18.2.0",
-    "react-alert": "^7.0.3",
-    "react-alert-template-basic": "^1.0.2",
-    "react-dom": "^18.2.0",
-    "react-hot-toast": "^2.4.1",
-    "react-icons": "^4.8.0",
-    "react-lazy-load": "^4.0.1",
+  -heroicons/react": "^2.0.17",
+  -material-tailwind/react": "^1.4.2",
+   -smastrom/react-rating": "^1.3.1",
+    aos": "^2.3.4",
+    aos": "^2.3.4",
+   daisyui": "^2.51.6",
+    firebase": "^9.21.0",
+    localforage": "^1.10.0",
+    match-sorter": "^6.3.1",
+    react": "^18.2.0",
+    react-alert": "^7.0.3",
+    react-alert-template-basic": "^1.0.2",
+    react-dom": "^18.2.0",
+    react-hot-toast": "^2.4.1",
+    react-icons": "^4.8.0",
+    react-lazy-load": "^4.0.1",
     "react-loader-spinner": "^5.3.4",
-    "react-router-dom": "^6.11.0",
-    "react-to-pdf": "^0.0.14",
-    "react-toastify": "^9.1.2",
-    "sort-by": "^1.2.0",
-    "swiper": "^9.2.4"
+    react-router-dom": "^6.11.0",
+    react-to-pdf": "^0.0.14",
+    react-toastify": "^9.1.2",
+    sort-by": "^1.2.0",
+    swiper": "^9.2.4"
 ---------
 
 
