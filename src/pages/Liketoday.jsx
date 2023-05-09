@@ -10,7 +10,7 @@ const Liketoday = () => {
           Consectetur numquam poro nemo veniam eligendi rem adipisci quo modi.
         </p>
         <div className="md:grid grid-cols-2 gap-5 md:mt-16 mt-10  ">
-          <div className="bg-gray-50  p-5 mt-5 ">
+          <div className="bg-gray-50  p-5 mt-5 hover:opacity-60 transition duration-300 ">
             <h3 className="text-2xl font-bold mb-3">
               {" "}
               <img
@@ -26,7 +26,7 @@ const Liketoday = () => {
               are a great way to explore flavors.
             </p>
           </div>
-          <div className="bg-gray-50 p-5 mt-5 ">
+          <div className="bg-gray-50 p-5 mt-5 hover:opacity-60 transition duration-300 ">
             <h3 className="text-2xl font-bold mb-3">
               {" "}
               <img
@@ -43,7 +43,7 @@ const Liketoday = () => {
               satisfaction
             </p>
           </div>
-          <div className="bg-gray-50 p-5 mt-5">
+          <div className="bg-gray-50 p-5 mt-5 hover:opacity-60 transition duration-300">
             <h3 className="text-2xl font-bold mb-3">
               {" "}
               <img
@@ -59,8 +59,8 @@ const Liketoday = () => {
               water, juice, tea, coffee, wine, beer, or spirits.
             </p>
           </div>
-          <div className="bg-gray-50 p-5 mt-5 ">
-            <h3 className="text-2xl font-bold mb-3">
+          <div className="bg-gray-50 p-5 mt-5 hover:opacity-60 transition duration-300">
+            <h3 className="text-2xl font-bold mb-3 ">
               {" "}
               <img
                 className="h-10"

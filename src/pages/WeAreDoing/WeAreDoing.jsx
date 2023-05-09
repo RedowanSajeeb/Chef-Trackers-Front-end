@@ -4,15 +4,20 @@ const WeAreDoing = () => {
   return (
     <div className="side-container  md:mt-28 mt-10 ms-3 me-3">
       <div className="md:flex ">
-        <div>
+        <div data-aos="fade-right">
           <img
             className=" mb-10 rounded-lg Right-to-left md:ms-28 h-full"
             src="https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2021/04/18050226/Sky-Garden.jpg"
             alt=""
           />
         </div>
-        <div>
-          <div className="md:ms-48 ">
+        <div
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        >
+          <div className="md:ms-48">
             <h1 className="md:text-5xl text-4xl   font-bold mb-14">
               We are doing more than you{" "}
               <span className="text-amber-700 mt-10 fontStyle">

@@ -11,7 +11,11 @@ const ChefCard = ({chef}) => {
         <div className="card h-full  w-auto glass">
           <figure>
             <LazyLoad>
-              <img className="h-96" src={picture} alt="car!" />
+              <img
+                className="h-96   hover:opacity-40 transition duration-300 ease-in-out hover:scale-110"
+                src={picture}
+                alt="car!"
+              />
             </LazyLoad>
           </figure>
           <div className="card-body">

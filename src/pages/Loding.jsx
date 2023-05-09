@@ -1,20 +1,26 @@
 import React from 'react';
-import { ThreeCircles } from 'react-loader-spinner';
+import { BallTriangle} from 'react-loader-spinner';
 
 const Loding = () => {
     return (
-      <div>
-        <ThreeCircles
-          height="100"
-          width="100"
-          color="#4fa94d"
-          wrapperStyle={{}}
-          wrapperClass=""
+      <div
+        style={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+         
+        }}
+      >
+        <BallTriangle
+          height={100}
+          width={100}
+          radius={5}
+          color="#FFBF00"
+          ariaLabel="ball-triangle-loading"
+          wrapperClass={{}}
+          wrapperStyle=""
           visible={true}
-          ariaLabel="three-circles-rotating"
-          outerCircleColor=""
-          innerCircleColor=""
-          middleCircleColor=""
         />
       </div>
     );

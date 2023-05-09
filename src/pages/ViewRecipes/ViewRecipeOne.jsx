@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useAlert } from "react-alert";
-
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import { BsFillBookmarkCheckFill, BsFillBookmarkHeartFill } from "react-icons/bs";
 const ViewRecipeOne = ({ recipe }) => {
   const alert = useAlert();
   const [favorit, setFavorit] = useState(false);
@@ -54,8 +56,13 @@ const ViewRecipeOne = ({ recipe }) => {
             </div>
           </figcaption>
           <div>
-            <h1 className="fontStyle mt-5 text-2xl font-bold text-amber-600">
-              rating <span className="text-font">{rating}</span>
+            <h1 className="fontStyle mt-5 flex gap-2 items-center text-2xl font-bold text-amber-600">
+              rating: <span className="text-font">{rating}</span>
+              <Rating
+                style={{ maxWidth: 90, color: " #ffe234" }}
+                value={Math.round(rating || 0)}
+                readOnly
+              />
             </h1>
           </div>
           <div className="card-actions">
@@ -66,19 +73,21 @@ const ViewRecipeOne = ({ recipe }) => {
                 disabled
               >
                 <div className="card-actions justify-end">
-                  <div className="badge text-slate-100">
-                    Favorite &#10084;&#65039;
+                  <div className="flex items-center ">
+                    Favorite{" "}
+                    <BsFillBookmarkCheckFill className="ms-1 text-2xl"></BsFillBookmarkCheckFill>
                   </div>
                 </div>
               </button>
             ) : (
               <button
                 onClick={favoriteBtnHandle}
-                className="btn btn-outline btn-warning mt-6"
+                className="btn btn-outline  mt-6"
               >
                 <div className="card-actions justify-end">
-                  <div className="badge text-slate-100">
-                    Favorite &#10084;&#65039;
+                  <div className=" flex items-center text-slate-100">
+                    Favorite{" "}
+                    <BsFillBookmarkHeartFill className="ms-1 text-2xl"></BsFillBookmarkHeartFill>
                   </div>
                 </div>
               </button>

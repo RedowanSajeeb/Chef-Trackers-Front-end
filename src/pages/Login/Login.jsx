@@ -45,6 +45,10 @@ if(password !== confirmpassword){
 
         console.log(user);
         // ...
+        setloding(false);
+        setReload(true);
+        navigate(from, { replace: true });
+        
         formValue.reset("");
         Setsuccessful("Welcome back! Your login was successful.");
         // Navigate(from, { replace: true });

@@ -37,8 +37,9 @@ const Registration = () => {
     const email = formValue.email.value;
     const password = formValue.password.value;
     const photoUrl = formValue.photoUrl.value;
-    if (!/(?=.*[0-9].*[0-9])/.test(password)) {
-      setError("  Ensure string has two digits.");
+    console.log(photoUrl);
+    if (!/(?=.*\d)/.test(password)) {
+      setError("should contain at least one digit");
       return;
     } else if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
       setError(" Ensure string has two uppercase letters");
@@ -99,7 +100,21 @@ const Registration = () => {
               label="Password"
               required
             />
-            <Input name="photoUrl" size="lg" label="Photo URL" />
+            <Input name="photoUrl" size="lg" label="Photo URL" required />
+            <label className="block">
+              <span className="sr-only">Choose profile photo</span>
+              <input
+                // name="photoUrl"
+                type="file"
+                className="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-violet-50 file:text-violet-700
+      hover:file:bg-violet-100
+    "
+              />
+            </label>
           </div>
           <h1>{successful}</h1>
           <Checkbox
