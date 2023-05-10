@@ -6,7 +6,7 @@ const Blog = () => {
     return (
       <div ref={ref} className="side-container ms-5 me-5">
         <div className="btn btn-outline btn-warning mt-4 mt-10 ms-3">
-          <Pdf targetRef={ref} filename="code-example.pdf">
+          <Pdf targetRef={ref} filename="blog-page.pdf">
             {({ toPdf }) => (
               <button className="badge text-slate-100" onClick={toPdf}>
                 Generate Pdf
