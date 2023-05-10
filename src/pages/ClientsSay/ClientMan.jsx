@@ -4,7 +4,7 @@ import LazyLoad from 'react-lazy-load';
 
 const ClientMan = () => {
     return (
-      <div className=" sm:mt-48 md:grid grid-cols-2    items-center">
+      <div className="sm:mt-48 md:grid grid-cols-2 mt-24   items-center">
         <div
           data-aos="fade-right"
           data-aos-offset="300"
