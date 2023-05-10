@@ -25,7 +25,7 @@ const ViewRecipes = () => {
           {/* ------ */}
           <div className="card mb-10 lg:card-side bg-base-100 shadow-xl">
             <figure>
-              <img className="h-96" src={picture} alt="Album" />
+              <img className="h-96 md:ms-5" src={picture} alt="Album" />
             </figure>
             <div className="mt-20 ms-10 me-5">
               <h2 className="card-title fontStyle mt-5 text-2xl font-bold text-amber-700">

@@ -35,7 +35,7 @@ const ChefCard = ({chef}) => {
             <p className="mt-4">{short_bio}</p>
             <div className="card-actions justify-end">
               <Link to={`/chef/${_id}`}>
-                <button className="btn btn-outline btn-warning ">
+                <button className="btn btn-outline btn-warning">
                   <div className="card-actions justify-end">
                     <div className="badge text-slate-100">View Recipes</div>
                   </div>

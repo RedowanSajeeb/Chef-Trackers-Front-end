@@ -41,7 +41,7 @@ const Registration = () => {
     const photoUrl = formValue.photoUrl.value;
     const confirmpassword = formValue.cmpassword.value;
     setError('')
- if(password == confirmpassword){
+ if(password !== confirmpassword){
     return setError(
       "Make sure that the password and confirmation password fields match exactly"
     );
@@ -111,7 +111,10 @@ const Registration = () => {
                 label="Password"
                 required
               />
-              <div onClick={() => setShow(!show)} className="absolute ms-80">
+              <div
+                onClick={() => setShow(!show)}
+                className="absolute ms-60 md:ms-80"
+              >
                 {show ? (
                   <AiOutlineEyeInvisible className="text-4xl "></AiOutlineEyeInvisible>
                 ) : (
@@ -150,18 +153,28 @@ const Registration = () => {
 
           <h1>{successful}</h1>
           <Checkbox
+          required
             label={
               <Typography
                 variant="small"
                 color="gray"
                 className="flex items-center font-normal"
+                
               >
                 I agree the
                 <a
                   href="#"
-                  className="font-medium transition-colors text-orange-900 hover:text-blue-500"
+                  className="font-medium transition-colors text-red-400 hover:text-blue-500"
                 >
-                  &nbsp;Terms and Conditions
+                  &nbsp;
+                  <Link
+                    to={
+                      "https://www.termsfeed.com/live/b5fb6ace-6483-4497-a9cf-618587f31111"
+                    }
+                    target="https://www.termsfeed.com/live/b5fb6ace-6483-4497-a9cf-618587f31111"
+                  >
+                    Terms and Conditions
+                  </Link>
                 </a>
               </Typography>
             }

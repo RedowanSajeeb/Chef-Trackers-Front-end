@@ -37,12 +37,18 @@ const { user, logout } = useContext(AuthContext);
         </NavLink>
       </Typography>
       {user ? (
-        <button className="fontStyle" onClick={loggggout} variant="secondary">
-          Logout
-        </button>
+        <Link>
+          <button
+            className="fontStyle text-gray-800"
+            onClick={loggggout}
+            variant="secondary"
+          >
+            Logout
+          </button>
+        </Link>
       ) : (
         <Link to={"/login"}>
-          <button className="fontStyle" variant="secondary">
+          <button className="fontStyle text-gray-800" variant="secondary">
             Sign In
           </button>
         </Link>
@@ -80,15 +86,17 @@ const { user, logout } = useContext(AuthContext);
             href="#"
             className="mr-4 cursor-pointer py-1.5 font-medium"
           >
-            <div className="flex items-center">
-              <img
-                className="h-14"
-                src="https://png.pngtree.com/png-clipart/20220705/ourmid/pngtree-illustration-of-male-chef-png-image_5683388.png"
-              />
-              <h2 className="text-lg fontStyle ">
-                Chef <span className="text-amber-900">Trackers</span>
-              </h2>
-            </div>
+            <Link to={"/"}>
+              <div className="flex items-center">
+                <img
+                  className="h-14"
+                  src="https://png.pngtree.com/png-clipart/20220705/ourmid/pngtree-illustration-of-male-chef-png-image_5683388.png"
+                />
+                <h2 className="text-lg fontStyle ">
+                  Chef <span className="text-amber-900">Trackers</span>
+                </h2>
+              </div>
+            </Link>
           </Typography>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>

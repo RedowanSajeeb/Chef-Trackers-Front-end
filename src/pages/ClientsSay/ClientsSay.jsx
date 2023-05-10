@@ -39,7 +39,7 @@ const ClientsSay = () => {
           <SwiperSlide>
             <div className="text " data-swiper-parallax="-100">
               <img
-                src="https://lh3.googleusercontent.com/-2ABrXEcBGD3A7dr7y7tTKngvPSzeQqm9jPhTpMx8NgfP1KvjSfbbPY1UWl5hoPb9wWQ9nhFr4gbnfSKUeWdV3_880MdmV-rwtNkbSQG"
+                src="https://danivalent.com/wp-content/uploads/2018/11/DANI-VALENT-Cooking-Class-Testimonial-Nicola-B.jpg"
                 alt=""
               />
             </div>
@@ -47,15 +47,16 @@ const ClientsSay = () => {
           <SwiperSlide>
             <div className="text" data-swiper-parallax="-100">
               <img
-                src="https://lh3.googleusercontent.com/L15utYktdQ2JmaJ6VOIlUMnbfm8TPFtTh6z2sfsOpZQPTFMGdJO-H9_QWAvSZfEH8g4UMKv7-6V3REijypaf38fJ6CFTiOh4qImqbWrT"
+                src="https://uploads-ssl.webflow.com/5e3de80322b300854230f11f/5ec5dcd02a878549d71d57fe_testimonial-4.jpg"
                 alt=""
               />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="text" data-swiper-parallax="-100">
-              <img className='h-full'
-                src="https://lh3.googleusercontent.com/gz2PkksBRxXPgP2qzWOzg0ZSvPV1Zy8icFUEIaZAvBUsUAaNxbbjJm-HmDIHr7YmgdIaLdqX4RKZj0Z_Dd0CrxYnbvTEJX7TChNAgj_I"
+              <img
+                className="h-full"
+                src="https://www.vandelaydesign.com/wp-content/uploads/upflow-615x275.jpg"
                 alt=""
               />
             </div>

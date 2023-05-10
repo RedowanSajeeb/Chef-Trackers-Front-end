@@ -1,6 +1,7 @@
 import React from 'react';
 import bgStoryPhoto from "./../../Public/blob-haikei.svg";
 import LazyLoad from 'react-lazy-load';
+import { Link } from 'react-router-dom';
 const OurStory = () => {
     return (
       <div
@@ -34,11 +35,16 @@ const OurStory = () => {
               alt=""
             />
 
-            <button className="btn btn-outline btn-warning mt-4 ">
-              <div className="card-actions justify-end">
-                <div className="badge text-slate-100">more Story</div>
-              </div>
-            </button>
+            <Link
+              target="https://thechefschool.com/success-stories/"
+              to={"https://thechefschool.com/success-stories/"}
+            >
+              <button className="btn btn-outline btn-warning mt-4 ">
+                <div className="card-actions justify-end">
+                  <div className="badge text-slate-100">more Story</div>
+                </div>
+              </button>
+            </Link>
           </div>
           <div
             style={{
